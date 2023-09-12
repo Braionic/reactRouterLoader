@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+.linklist {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linklist li {
+    margin-right: 16px;
+}
+.linklist a {
+    text-decoration: none;
+}
+.active{
+    text-decoration: line-through;
+    color: pink;
+}
+.linkcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 4px 4px 5px rgb(224, 218, 218);
+    margin-bottom: 20px;
+}
