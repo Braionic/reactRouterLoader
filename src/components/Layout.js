@@ -11,6 +11,7 @@ export default function Layout() {
             <li><NavLink className={({isActive})=> isActive? "active": null} to="/about">About</NavLink></li>
             <li><NavLink className={({isActive})=> isActive? "active": null} to="/contact">Contact</NavLink></li>
             <li><NavLink className={({isActive})=> isActive? "active": null} to="/host">Host</NavLink></li>
+            <li><button onClick={()=> localStorage.removeItem("isloggin")}>X</button></li>
         </ol>
     </div>
     <Outlet />

@@ -12,6 +12,7 @@ import Prices from './components/Host/Prices';
 import Login from './components/Login';
 import { loader as Dashboardloader } from './components/Host/Dashboard';
 import { fakeauth } from './components/requireauth';
+import { action } from './components/Login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />}>
@@ -23,7 +24,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='data' element={<Data />} loader={async ()=> await fakeauth() } />
     <Route path='prices' element={<Prices />} loader={async ()=> await fakeauth() } />
   </Route>
-  <Route path='login' element={<Login />} />
+  <Route path='login' action={action} element={<Login />} />
   </Route>
 ))
 root.render(
