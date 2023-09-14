@@ -13,8 +13,9 @@ if(obj.email === "samantha.reversal@gmail.com" && obj.password === "1234"){
     message: "congrats",
     token: 1234
   }
+  const pathname = new URL(obj.request.url).searchParams.get("redirectTo")
   localStorage.setItem("isloggin", "true")
-  return redirect("/host")
+  return redirect(`${pathname? pathname: "/host"}`)
 }
 return "Failed to Login"
 }
@@ -23,7 +24,7 @@ export async function action({request}){
   const formData = await request.formData()
   const email = formData.get('email');
   const password = formData.get('password');
- return fakelogin({email, password})
+ return fakelogin({email, password, request})
  
 }
 export default function Login() {

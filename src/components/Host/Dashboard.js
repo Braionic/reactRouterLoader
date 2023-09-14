@@ -2,10 +2,10 @@ import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import { fetchdata } from '../../api';
 import { fakeauth } from '../requireauth';
+
 export async function loader({request}){
-  const url = new URL(request.url)
-  console.log(url)
-    await fakeauth()
+ 
+    await fakeauth(request)
     return fetchdata()
     
 }

@@ -19,10 +19,10 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route index element={<App />} />
   <Route path='About' element={<About />} />
   <Route path='Contact' element={<Contact />} />
-  <Route path='Host/' element={<Host />}  loader={async ()=> await fakeauth() }>
+  <Route path='Host/' element={<Host />}  loader={async ({request})=> await fakeauth(request) }>
     <Route index element={<Dashboard />} loader={Dashboardloader} />
-    <Route path='data' element={<Data />} loader={async ()=> await fakeauth() } />
-    <Route path='prices' element={<Prices />} loader={async ()=> await fakeauth() } />
+    <Route path='data' element={<Data />} loader={async ({request})=> await fakeauth(request) } />
+    <Route path='prices' element={<Prices />} loader={async ({request})=> await fakeauth(request) } />
   </Route>
   <Route path='login' action={action} element={<Login />} />
   </Route>
